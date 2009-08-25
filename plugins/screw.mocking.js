@@ -13,6 +13,9 @@ Screw.Matchers.stub = function(obj, attr) {
   return new Smoke.Stub(obj,attr);
 };
 
+// Make argument matchers available in the Screw.Matchers namespace.
+jQuery.extend(Screw.Matchers, Smoke.Mock.ArgumentMatchers);
+
 (function($) {
   $(Screw).bind("before", function(){
     function checkAndResetSmoke() {
